@@ -4,11 +4,11 @@ FROM golang:1.18-alpine
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY ./go/go.mod ./
+COPY ./go/go.sum ./
 RUN go mod download
 
-COPY ./ ./
+COPY ./go ./
 
 WORKDIR /app/src
 
